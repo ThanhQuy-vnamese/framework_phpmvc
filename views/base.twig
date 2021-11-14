@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Infectious | Coronavirus (COVID 19) Medical HTML Template</title>
+
+    <link rel="shortcut icon" href="{{ helper.custom_link('assets/images/favicon.ico')}}">
+    <link rel="stylesheet" href="{{ helper.custom_link('assets/css/master.css')}}">
+    <link rel="stylesheet" href="{{ helper.custom_link('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ helper.custom_link('assets/css/responsive.css')}}">
+</head>
+<body>
+
+<!--=== Loader Start ======-->
+<div id="loader-overlay">
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
+</div>
+<!--=== Loader End ======-->
+
+<!--=== Wrapper Start ===-->
+<div class="wrapper">
+
+    <!--=== Header Start ===-->
+    {{ include('components/header.twig')}}
+    <!--=== Header End ===-->
+    <!--=== Hero Slider Start ===-->
+    {{ include('components/slider.twig')}}
+    <!--=== Hero Slider End ===-->
+
+    <!--=== Welcome Start ===-->
+    {{ include('components/about_us.twig')}}
+    <!--=== Welcome End ===-->
+
+    <!--=== Counter Start ===-->
+    {{ include('components/counter.twig')}}
+    <!--=== Counter End ===-->
+
+    <!--=== Transmission Start ===-->
+    {{ include('components/transmission.twig')}}
+    <!--=== Transmission End ===-->
+
+    <!--=== Symptoms Start ===-->
+    {{ include('components/symptoms.twig')}}
+    <!--=== Symptoms End ===-->
+
+    <!--=== Prevention Start ===-->
+    {{ include('components/prevention.twig')}}
+    <!--=== Prevention End ===-->
+
+    <!--=== Hand Wash Start ===-->
+    {{ include('components/hand_wash.twig')}}
+    <!--=== Hand Wash End ===-->
+
+    <!--=== Our Team Start ===-->
+    {{ include('components/our_team.twig')}}
+    <!--=== Our Team End ===-->
+    <!--=== Our Team Start ===-->
+    {{ include('components/contact.twig')}}
+    <!--=== Our Team End ===-->
+
+    <!--=== Faqs Start ===-->
+    {{ include('components/faq.twig')}}
+    <!--=== Faqs End ===-->
+
+    <!--=== Blogs Start ===-->
+    {{ include('components/blogs.twig')}}
+    <!--=== Blogs End ===-->
+
+    <!--=== Footer Start ===-->
+    {{ include('components/footer.twig')}}
+    <!--=== Footer End ===-->
+
+</div>
+<!--=== Wrapper End ===-->
+
+<!--=== Javascript Plugins ===-->
+<script src="{{ helper.custom_link('assets/js/jquery.min.js')}}"></script>
+<script src="{{ helper.custom_link('assets/js/plugins.js')}}"></script>
+<script src="{{ helper.custom_link('assets/js/master.js')}}"></script>
+<!--=== Javascript Plugins End ===-->
+
+</body>
+</html>

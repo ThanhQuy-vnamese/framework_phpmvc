@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Infectious | Coronavirus (COVID 19) Medical HTML Template</title>
+
+    <link rel="shortcut icon" href="{{ helper.custom_link('assets/images/favicon.ico')}}">
+    <link rel="stylesheet" href="{{ helper.custom_link('assets/css/master.css')}}">
+    <link rel="stylesheet" href="{{ helper.custom_link('assets/css/responsive.css')}}">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav on no-full">
+    <div class="container">
+        <!--=== Start Header Navigation ===-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i class="mdi mdi-menu"></i> </button>
+            <div class="logo"> <a href="{{ helper.redirect('/') }}"> <img class="logo logo-display" src="{{ helper.custom_link('assets/images/logo-black.png')}}" alt=""> <img class="logo logo-scrolled" src="{{ helper.custom_link('assets/images/logo-black.png')}}" alt=""> </a> </div>
+        </div>
+        <!--=== End Header Navigation ===-->
+    </div>
+</nav>
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        {% if(session.getFlash('message')) %}
+            <div class="alert alert-success">
+                {{ session.getFlash('message') }}
+            </div>
+        {%  endif %}
+        {% if(session.getFlash('warning_message')) %}
+            <div class="alert alert-danger">
+                {{ session.getFlash('warning_message') }}
+            </div>
+        {%  endif %}
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-7 col-lg-5 col-xl-6">
+                <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-8 col-lg-7 col-xl-5 offset-xl-1">
+                <div class="divider d-flex align-items-center my-4 ">
+                    <p class="text-center text-info">REGISTER</p>
+                </div>
+                <form method="post" action="{{ helper.redirect('/new_register') }}">
+                    <!-- Firstname input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form1Example03" class="form-control form-control-lg" name="firstname" />
+                        <label class="form-label" for="form1Example103">Firstname</label>
+                    </div>
+                    <!-- Lastname input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form1Example003" class="form-control form-control-lg" name="lastname" />
+                        <label class="form-label" for="form1Example003">Lastname</label>
+                    </div>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" id="form1Example13" class="form-control form-control-lg" name="email"/>
+                        <label class="form-label" for="form1Example13">Email address</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="password" id="form1Example23" class="form-control form-control-lg" name="password"/>
+                        <label class="form-label" for="form1Example23">Password</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="date" id="form1Example23" class="form-control form-control-lg" name="birth"  value="{{ birth }}" required />
+                        <label class="form-label" for="form1Example23">Birthday</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label"><input  class="form-check-inline" {{ gender=='male'?'checked':''}} type="checkbox" name="gender" value="male" >Male</label>
+                            <label class="form-check-label"><input  class="form-check-inline" {{ gender=='female'?'checked':''}} type="checkbox" name="gender" value="female" >Female </label>
+                        </div>
+                        <label class="form-label" for="form1Example23">Gender</label>
+
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn-primary btn-lg btn-block">Sign up</button>
+
+                    <div class="divider d-flex align-items-center my-4 " style="display: block">
+                        <p class="text-center fw-bold mx-3 mb-0 text-muted">Have Account?</p>
+                        <a class="btn btn-primary btn-lg center-block" style="background-color: #bf93e4" href="{{ helper.redirect('/login') }}" role="button">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
+
+

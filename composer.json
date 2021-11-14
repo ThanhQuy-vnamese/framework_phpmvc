@@ -1,0 +1,23 @@
+{
+    "name": "hieu/phpmvc",
+    "description": "hieu-php-mvc",
+    "authors": [
+        {
+            "name": "Hieu Dang",
+            "email": "dangtrunghieu0207@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.3",
+        "twig/twig": "^3.0",
+        "firebase/php-jwt": "^5.4",
+        "phpmailer/phpmailer": "^6.5",
+        "endroid/qr-code": "^4.3",
+        "facebook/graph-sdk": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}

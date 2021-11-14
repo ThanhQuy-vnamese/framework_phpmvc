@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Infectious | Coronavirus (COVID 19) Medical HTML Template</title>
+
+    <link rel="shortcut icon" href="{{ helper.custom_link('assets/images/favicon.ico')}}">
+    <link rel="stylesheet" href="{{ helper.custom_link('assets/css/master.css')}}">
+    <link rel="stylesheet" href="{{ helper.custom_link('assets/css/responsive.css')}}">
+    <style>
+        body {
+            background-color: #f9f9fa
+        }
+
+        .padding {
+            padding: 3rem !important
+        }
+
+        .user-card-full {
+            overflow: hidden
+        }
+
+        .card {
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+            box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+            border: none;
+            margin-bottom: 30px
+        }
+
+        .m-r-0 {
+            margin-right: 0px
+        }
+
+        .m-l-0 {
+            margin-left: 0px
+        }
+
+        .user-card-full .user-profile {
+            border-radius: 5px 0 0 5px
+        }
+
+        .bg-c-lite-green {
+            background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+            background: linear-gradient(to right, #ee5a6f, #f29263)
+        }
+
+        .user-profile {
+            padding: 20px 0
+        }
+
+        .card-block {
+            padding: 1.25rem
+        }
+
+        .m-b-25 {
+            margin-bottom: 25px
+        }
+
+        .img-radius {
+            border-radius: 5px
+        }
+
+        h6 {
+            font-size: 14px
+        }
+
+        .card .card-block p {
+            line-height: 25px
+        }
+
+        @media only screen and (min-width: 1400px) {
+            p {
+                font-size: 14px
+            }
+        }
+
+        .card-block {
+            padding: 1.25rem
+        }
+
+        .b-b-default {
+            border-bottom: 1px solid #e0e0e0
+        }
+
+        .m-b-20 {
+            margin-bottom: 20px
+        }
+
+        .p-b-5 {
+            padding-bottom: 5px !important
+        }
+
+        .card .card-block p {
+            line-height: 25px
+        }
+
+        .m-b-10 {
+            margin-bottom: 10px
+        }
+
+        .text-muted {
+            color: #919aa3 !important
+        }
+
+        .b-b-default {
+            border-bottom: 1px solid #e0e0e0
+        }
+
+        .f-w-600 {
+            font-weight: 600
+        }
+
+        .m-b-20 {
+            margin-bottom: 20px
+        }
+
+        .m-t-40 {
+            margin-top: 20px
+        }
+
+        .p-b-5 {
+            padding-bottom: 5px !important
+        }
+
+        .m-b-10 {
+            margin-bottom: 10px
+        }
+
+        .m-t-40 {
+            margin-top: 20px
+        }
+
+        .user-card-full .social-link li {
+            display: inline-block
+        }
+
+        .user-card-full .social-link li a {
+            font-size: 20px;
+            margin: 0 10px 0 0;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav on no-full">
+    <div class="container">
+        <!--=== Start Header Navigation ===-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i class="mdi mdi-menu"></i> </button>
+            <div class="logo"> <a href="{{ helper.redirect('/') }}"> <img class="logo logo-display" src="{{ helper.custom_link('assets/images/logo-black.png')}}" alt=""> <img class="logo logo-scrolled" src="{{ helper.custom_link('assets/images/logo-black.png')}}" alt=""> </a> </div>
+        </div>
+        <!--=== End Header Navigation ===-->
+    </div>
+</nav>
+{% if(session.getFlash('message')) %}
+    <div class="alert alert-success">
+        {{ session.getFlash('message') }}
+    </div>
+{%  endif %}
+<section class="vh-100">
+    <div class="container-fluid py-5 h-100" id="page-content">
+        <div class="padding">
+        <div class="row container-fluid d-flex justify-content-center">
+            <div class="col-xl-6 col-md-12">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white" style="height: 450px">
+                                <div class="m-b-25">
+                                    <img src="{{ helper.custom_link(avatar_link) }}" style="max-height: 450px" class="img-radius" alt="User-Profile-Image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                                <div class="col-sm-12">
+                                    <!-- Firstname input -->
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form1Example103">Firstname</label>
+                                        <input type="text" id="form1Example03" class="form-control form-control-lg" name="firstname" value="{{ firstname }}" readonly />
+                                    </div>
+                                    <!-- Lastname input -->
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form1Example003">Lastname</label>
+                                        <input type="text" id="form1Example003" class="form-control form-control-lg" name="lastname" value="{{ lastname }}" readonly/>
+                                    </div>
+                                    <!-- Email input -->
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form1Example13">Email address</label>
+                                        <input type="email" id="form1Example13" class="form-control form-control-lg" name="email" value="{{ email }}" readonly/>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form1Example23">Birthday</label>
+                                        <input type="date" id="form1Example23" class="form-control form-control-lg" name="birth"  value="{{ birthday }}" required readonly/>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form1Example23">Gender</label>
+
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label"><input  class="form-check-inline" {{ gender=='male'?'checked':''}} type="radio" name="gender" value="male"  >Male</label>
+                                            <label class="form-check-label"><input  class="form-check-inline" {{ gender=='female'?'checked':''}} type="radio" name="gender" value="female" >Female </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-sm-6 center">
+                                <a href="{{ helper.redirect('/edit_profile') }}" class="btn btn-candy">
+                                    EDIT YOUR PROFILE
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<nav class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav on no-full">
+    <!--=== Start Top Search ===-->
+{#    <div class="fullscreen-search-overlay" id="search-overlay"> <a href="#" class="fullscreen-close" id="fullscreen-close-button"><i class="mdi mdi-close"></i></a>#}
+{#        <div id="fullscreen-search-wrapper">#}
+{#            <form method="get" id="fullscreen-searchform">#}
+{#                <input type="text" value="" placeholder="Type and hit Enter..." id="fullscreen-search-input" class="search-bar-top">#}
+{#                <i class="fullscreen-search-icon mdi mdi-magnify">#}
+{#                    <input value="" type="submit">#}
+{#                </i>#}
+{#            </form>#}
+{#        </div>#}
+{#    </div>#}
+    <!--=== End Top Search ===-->
+
+    <div class="container">
+        <!--=== Start Atribute Navigation ===-->
+{#        <div class="attr-nav">#}
+{#            <ul>#}
+{#                <li class="search"><a href="#" id="search-button"><i class="mdi mdi-magnify"></i></a></li>#}
+{#            </ul>#}
+{#        </div>#}
+        <!--=== End Atribute Navigation ===-->
+
+        <!--=== Start Header Navigation ===-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i class="mdi mdi-menu"></i> </button>
+            <div class="logo"> <a href="{{ helper.redirect("/") }}"> <img class="logo logo-display" src="{{ helper.custom_link('assets/images/logo-black.png')}}" alt=""> <img class="logo logo-scrolled" src="{{ helper.custom_link('assets/images/logo-black.png')}}" alt=""> </a> </div>
+        </div>
+        <!--=== End Header Navigation ===-->
+
+        <!--=== Collect the nav links, forms, and other content for toggling ===-->
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right nav-custom" data-in="fadeIn" data-out="fadeOut">
+                <li><a class="page-scroll" href="#home">Home</a></li>
+                <li><a class="page-scroll" href="#symptom">Symptoms</a></li>
+                <li><a class="page-scroll" href="#doctor">Our Doctors</a></li>
+                <li><a class="page-scroll" href="#contact">Contact Us</a></li>
+                <li><a class="page-scroll" href="#faqs">FAQs</a></li>
+                <li><a class="page-scroll" href="#blog">Blogs</a></li>
+                <li><a class="page-scroll" href="{{ helper.redirect('/services') }}">Medican</a></li>
+                <li>
+                    <span class="page-scroll"> <div class="dropdown">
+                    <button class="dropbtn page-scroll btn-block ">Account</button>
+                    <div class="dropdown-content">
+                        <a class="page-scroll btn-block dropdown-item" href="{{ helper.redirect('/login') }}">Login</a>
+                        <a class="page-scroll btn-block dropdown-item" href="{{ helper.redirect('/register') }}">Register</a>
+                        <a class="page-scroll btn-block dropdown-item" href="{{ helper.redirect('/profile') }}">Your Profile</a>
+                        <a class="page-scroll btn-block dropdown-item" href="{{ helper.redirect('/logout') }}">Log out</a>
+                    </div>
+                </div></span>
+
+                </li>
+            </ul>
+        </div>
+        <!--=== /.navbar-collapse ===-->
+    </div>
+    <style>
+        /* Style The Dropdown Button */
+        .dropbtn {
+            width: 100px;
+            height: 25px;
+            background-color: #889afb;
+            margin-top: 15px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+            background-color: #889afb;
+        }
+    </style>
+</nav>

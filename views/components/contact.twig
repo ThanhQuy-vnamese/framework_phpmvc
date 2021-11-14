@@ -1,0 +1,41 @@
+<section class="pb-0" id="contact">
+    <div class="virus-box-1 shapes" data-opacity="0.2"></div>
+    <div class="virus-box-2 shapes" data-opacity="0.2"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 heading-style-one box-title">
+                <h2 class="default-color text-uppercase">Contact Form</h2>
+                <span class="font-30">Please send us your message any time you need help</span>
+            </div>
+            {% if(session.getFlash('message')) %}
+                <div class="alert alert-success">
+                    {{ session.getFlash('message') }}
+                </div>
+            {%  endif %}
+            {% if(session.getFlash('warning_message')) %}
+                <div class="alert alert-danger">
+                    {{ session.getFlash('warning_message') }}
+                </div>
+            {%  endif %}
+        </div>
+        <div class="row mt-50">
+            <form method="post" action="{{ helper.redirect('/contact_insert') }}">
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form1Example13">Email address</label>
+                    <input type="email" id="form1Example13" class="form-control form-control-lg" name="email" required />
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form1Example23">Message</label>
+                    <textarea id="form1Example23" class="form-control form-control-lg" cols="50" rows="5" name="message" required></textarea>
+                </div>
+                <!-- Submit button -->
+                <div class="form-outline mt-10">
+                <button type="submit" class="btn-candy btn-block btn-sm">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

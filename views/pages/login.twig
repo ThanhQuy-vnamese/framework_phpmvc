@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Infectious | Coronavirus (COVID 19) Medical HTML Template</title>
+
+    <link rel="shortcut icon" href="{{ helper.custom_link('assets/images/favicon.ico')}}">
+    <link rel="stylesheet" href="{{ helper.custom_link('assets/css/master.css')}}">
+    <link rel="stylesheet" href="{{ helper.custom_link('assets/css/responsive.css')}}">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav on no-full">
+    <div class="container">
+        <!--=== Start Header Navigation ===-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i class="mdi mdi-menu"></i> </button>
+            <div class="logo"> <a href="{{ helper.redirect('/') }}"> <img class="logo logo-display" src="{{ helper.custom_link('assets/images/logo-black.png')}}" alt=""> <img class="logo logo-scrolled" src="{{ helper.custom_link('assets/images/logo-black.png')}}" alt=""> </a> </div>
+        </div>
+        <!--=== End Header Navigation ===-->
+    </div>
+</nav>
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        {% if(session.getFlash('message')) %}
+            <div class="alert alert-success">
+                {{ session.getFlash('message') }}
+            </div>
+        {%  endif %}
+        {% if(session.getFlash('warning_message')) %}
+            <div class="alert alert-danger">
+                {{ session.getFlash('warning_message') }}
+            </div>
+        {%  endif %}
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-7 col-lg-5 col-xl-6">
+                <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-8 col-lg-7 col-xl-5 offset-xl-1">
+                <form method="post" action="{{ helper.redirect('/login_res') }}">
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" id="form1Example13" class="form-control form-control-lg" name="email" />
+                        <label class="form-label" for="form1Example13">Email address</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <input type="password" id="form1Example23" class="form-control form-control-lg" name="password"/>
+                        <label class="form-label" for="form1Example23">Password</label>
+                    </div>
+
+                    <div class="d-flex justify-content-around align-items-center mb-4">
+                        <!-- Checkbox -->
+                        <div class="form-check">
+                            <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    name="remember"
+                                    value="remember"
+                                    id="form1Example3"
+                                    checked
+                            />
+                            <label class="form-check-label" for="form1Example3"> Remember me </label>
+                        </div>
+                        <a href="{{ helper.redirect('/resetpassword') }}">Forgot password?</a><br>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+
+                    <div class="divider d-flex align-items-center my-4">
+                        <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                    </div>
+
+                    <div class="divider d-flex align-items-center my-4 center-block" style="display: inline-block">
+                        <a class="btn btn-primary btn-lg" style="background-color: #3b5991" href="#" role="button">
+                            Continue with Facebook
+                        </a>
+                        <a class="btn btn-primary btn-lg" style="background-color: #55acee" href="#" role="button">
+                            Continue with Google</a>
+                    </div>
+                    <div class="divider d-flex align-items-center my-4 " style="display: block">
+                        <p class="text-center fw-bold mx-3 mb-0 text-muted">Don't Have Account?</p>
+                        <a class="btn btn-primary btn-lg center-block" style="background-color: #bf93e4" href="{{ helper.redirect('/register') }}" role="button">Register</a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
+
+
